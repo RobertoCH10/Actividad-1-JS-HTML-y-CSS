@@ -1,49 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Actividad</title>
   <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="index.js"></script>
 </head>
 <body>
+  
   <div class="container">
     <h1>Agregar tareas</h1>
+
     <div class="add-task">
-        <input type="text" id="task-input" placeholder="Ingrese una tarea">
-        <button onclick="addTask()">Agregar</button>
-      </div>
+      <input type="text" id="task-input">
+      <button onclick="addTask()">Agregar</button>
+    </div>
+
     <div class="task-list-container">
       <div class="task-list">
         <h2>En proceso</h2>
         <ul id="pending-tasks">
+
           <li class="task-item">
-            <input type="checkbox">
+            <input type="checkbox" onchange="completed(event)">
             <span>Beber 2L de agua</span>
-            <button>Editar</button>
-            <button>Eliminar</button>
+            <div class="actions">
+              <button>Editar</button>
+              <button onclick="deleteTask(event)">Eliminar</button>
+            </div>
           </li>
+
           <li class="task-item">
-            <input type="checkbox">
-            <span>Mandar documentación</span>
-            <button>Editar</button>
-            <button>Eliminar</button>
+            <input type="checkbox" onchange="completed(event)">
+            <span>Mandar documentos</span>
+            <div class="actions">
+              <button>Editar</button>
+              <button onclick="deleteTask(event)">Eliminar</button>
+            </div>
           </li>
+
         </ul>
       </div>
 
       <div class="task-list">
         <h2>Completado</h2>
-        <input type="checkbox" class="checkbox-input2"checked>
-            <span style="text-decoration: line-through;">Pagar Netflix</span>
-        <ul id="completed-tasks">
-        </ul>
+        
+        <input type="checkbox" class="checkbox-input2" checked>
+        <span style="text-decoration: line-through;">Pagar Netflix</span>
+        <ul id="completed-tasks"></ul>
       </div>
+      <div class="label-container">
+          <label onclick="clearCompletedTasks()">Limpiar</label>
+        </div>
     </div>
-    
     
   </div>
 
-  
+  <script src="index.js"></script>
 </body>
 </html>
+
 
 

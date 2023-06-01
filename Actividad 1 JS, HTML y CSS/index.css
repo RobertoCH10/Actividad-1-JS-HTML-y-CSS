@@ -2,10 +2,15 @@
     max-width: 500px;
     margin-right: 10px;
     font-family: "Courier New", Courier, monospace;
+    font-size: small;
 }
 
 h1 {
   text-align: left;
+}
+
+h2 {
+  text-align: justify;
 }
 
 .add-task input[type="text"] {
@@ -23,6 +28,10 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+.actions button {
+  display: inline-block;
 }
 
 .task-list {
@@ -44,18 +53,33 @@ h1 {
   margin-right: 10px;
 }
 
+.label-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.label-container label {
+  cursor: pointer;
+}
+.label-container label:hover {
+  text-decoration: underline;
+}
+
 .task-item span {
   margin-left: 10px;
 }
 
+
+
 .task-item button {
-  margin-left: 20px;
+  margin-left: 40px;
   background-color: rgb(125, 125, 125);
   color: white;
-  margin-right: 10px; /* Añadido margen derecho */
+  margin-right: 30px;
+  padding: 2px 5px;
 }
 
-#completed-tasks {
-  color: green;
-}
+
   
