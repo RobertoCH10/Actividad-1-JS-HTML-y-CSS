@@ -45,12 +45,12 @@ function addTask() {
   
     if (checkbox.checked) {
       taskText.style.textDecoration = "line-through";
-      taskItem.removeChild(taskItem.querySelector(".actions")); // Remover los botones del elemento
+      taskItem.removeChild(taskItem.querySelector(".actions"));
       completedTasks.appendChild(taskItem);
     } else {
       taskText.style.textDecoration = "none";
       pendingTasks.appendChild(taskItem);
-      taskItem.appendChild(taskItem.querySelector(".actions")); // Restaurar los botones del elemento
+      taskItem.appendChild(taskItem.querySelector(".actions"));
     }
   }
   
