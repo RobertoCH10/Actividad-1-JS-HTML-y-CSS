@@ -20,20 +20,20 @@
         <h2>En proceso</h2>
         <ul id="pending-tasks">
 
-          <li class="task-item">
+          <li class="task-item" data-id="1">
             <input type="checkbox" onchange="completed(event)">
             <span>Beber 2L de agua</span>
             <div class="actions">
-              <button>Editar</button>
+              <button onclick="editTask(event)">Editar</button>
               <button onclick="deleteTask(event)">Eliminar</button>
             </div>
           </li>
 
-          <li class="task-item">
+          <li class="task-item" data-id="2">
             <input type="checkbox" onchange="completed(event)">
             <span>Mandar documentos</span>
             <div class="actions">
-              <button>Editar</button>
+              <button onclick="editTask(event)">Editar</button>
               <button onclick="deleteTask(event)">Eliminar</button>
             </div>
           </li>
@@ -43,9 +43,7 @@
 
       <div class="task-list">
         <h2>Completado</h2>
-        
-        <input type="checkbox" class="checkbox-input2" checked>
-        <span style="text-decoration: line-through;">Pagar Netflix</span>
+        <span></span>
         <ul id="completed-tasks"></ul>
       </div>
       <div class="label-container">
@@ -54,8 +52,7 @@
     </div>
     
   </div>
+
+  
 </body>
 </html>
-
-
-

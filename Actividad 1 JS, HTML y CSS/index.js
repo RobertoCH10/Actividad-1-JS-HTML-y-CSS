@@ -9,7 +9,7 @@ function addTask() {
       var checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       checkbox.onchange = completed;
-  
+      
       var span = document.createElement("span");
       span.textContent = taskInput.value;
   
@@ -18,6 +18,7 @@ function addTask() {
   
       var editButton = document.createElement("button");
       editButton.textContent = "Editar";
+      editButton.onclick = editTask;
   
       var deleteButton = document.createElement("button");
       deleteButton.textContent = "Eliminar";
@@ -50,7 +51,7 @@ function addTask() {
     } else {
       taskText.style.textDecoration = "none";
       pendingTasks.appendChild(taskItem);
-      taskItem.appendChild(taskItem.querySelector(".actions"));
+      taskItem.appendChild(taskItem.querySelector(".actions")); 
     }
   }
   
@@ -64,5 +65,16 @@ function addTask() {
   var completedTasks = document.getElementById("completed-tasks");
   completedTasks.innerHTML = "";
 }
-
+function editTask(event) {
+  var editButton = event.target;
+  var taskItem = editButton.parentNode.parentNode;
+  var taskId = taskItem.getAttribute("data-id");
+  var taskText = taskItem.querySelector("span");
+  
+  var newTaskName = prompt("Ingrese el nuevo nombre de la tarea", taskText.textContent);
+  
+  if (newTaskName !== null) {
+    taskText.textContent = newTaskName;
+  }
+}
   
